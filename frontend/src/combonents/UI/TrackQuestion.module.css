@@ -1,0 +1,21 @@
+.questioncontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: .5rem;
+    height: .5rem;
+    border-radius: 6px;
+    background-color: #f8faf8;
+    color: black;
+    border: 1px solid #ff6600;
+    padding: .5rem .5rem;
+    margin: .1rem;
+    text-align: center;
+    justify-content: center;
+    font-size: small;
+}
+
+.currentquestion {
+    background-color: #ff6600;
+    color: white;
+}

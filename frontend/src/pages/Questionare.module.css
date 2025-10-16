@@ -1,0 +1,22 @@
+.loadingcontainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(253, 253, 253, 0); /* dimmed backdrop */
+  z-index: 999;
+}
+
+.loadinggif {
+  position: absolute;       /* sits on top of parent */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;             /* adjust size */
+  height: 100px;
+  opacity: 0.8;             /* softens look */
+}

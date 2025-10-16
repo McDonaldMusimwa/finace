@@ -1,0 +1,33 @@
+.herO {
+  display: flex;
+  align-items: center; /* vertically centers image and text */
+  justify-content: center; /* center them horizontally in section */
+  gap: 1rem; /* spacing between image and text */
+  padding: 2rem;
+}
+
+.herO img {
+  width: 10rem; /* adjust as needed */
+  height: auto;
+  border-radius: 8px; /* optional rounded corners */
+  object-fit: cover;
+}
+
+.herO p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  max-width: 400px; /* so text doesn’t stretch too wide */
+}
+
+
+/* Media query for smaller screens, to stack the items vertically */
+@media (max-width: 768px) {
+  .herO {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .herO p {
+    margin-top: 20px;
+  }
+}

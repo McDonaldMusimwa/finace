@@ -1,0 +1,98 @@
+.container {
+  max-width: 1000px;
+  margin: 2.51rem auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.section {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  color: #2d3748;
+}
+
+.text {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.highlight {
+  font-weight: bold;
+  color: #ff9900; /* AWS orange */
+}
+
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.cardIcon {
+  font-size: 2rem;
+  color: #ff9900;
+  margin-bottom: 0.5rem;
+}
+
+.cta {
+  background-color:#88f33686;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 6px;
+  color: #fff;
+}
+
+.ctaTitle {
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+   color: #ff6600;
+}
+
+.ctaButton {
+  background: #fff;
+  color: #ff6600;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+  background: #f2f2f2;
+  transform: scale(1.05);
+}
+
+.icon {
+  color: #ff9900;
+  font-size: 1.4rem;
+}

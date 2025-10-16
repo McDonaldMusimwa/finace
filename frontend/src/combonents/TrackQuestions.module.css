@@ -1,0 +1,8 @@
+.questionscontainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  right: 5px;
+  align-items: flex-end;
+}

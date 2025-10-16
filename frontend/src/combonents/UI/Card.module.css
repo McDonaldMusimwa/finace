@@ -1,0 +1,54 @@
+.homeCard {
+    width: 300px;
+    height: 200px;
+    border: 2px solid #89F336;
+    perspective: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+    font-weight: bolder;
+}
+
+
+.homeCard:hover {
+  background-color: #89f336;
+  cursor: pointer;
+  color: rgb(7, 7, 7);
+}
+.homeCard:active, .homeCard:focus {
+  border-color: gray;
+    background-color: #caecae;
+    color:#213547
+}
+
+.card {
+
+  padding: 1rem;
+  /*background-color: var(--white-cyna);*/
+  box-shadow: 1px 1px 1px 1px var(--light-cyan);
+ 
+
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #333;
+}
+.card svg {
+
+font-size: 2rem;
+}
+
+.card .name{
+  font-size: .6rem;
+}
+.card:hover{
+  cursor: pointer;
+}
+
+/* Hero cards */
+.HeroCards{
+  display: flex;
+  flex-direction: row;
+  gap: .5rem;
+}
