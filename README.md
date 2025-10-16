@@ -1,89 +1,65 @@
-***  ✨ Practice Solution ⭐  ***
-# AWS Practice Questions Web App
+# 💰 Bank Statement Analyzer
 
-This project is a serverless web application designed to help users prepare for AWS certification exams. It features a frontend built with React and a backend powered by Node.js.
+Bank Statement Analyzer is a web application designed to help users **understand, visualize, and gain insights** from their bank statements.  
+It transforms raw financial data into **interactive graphs, summaries, and patterns** that promote better financial awareness and smarter decision-making.
 
-## 🧠 Purpose
-
-To provide aspiring AWS-certified professionals with a hands-on way to test and improve their knowledge using dynamic practice questions that simulate real exam scenarios.
+---
 
 ## 🚀 Features
 
-- ✅ View randomized AWS practice questions
-- ✅ Select and submit answers
-- ✅ See feedback on correct/incorrect responses
-- ✅ Backend API built with AWS Lambda
-- ✅ Data stored in DynamoDB
-- ✅ Deployed using AWS services (API Gateway, Lambda, DynamoDB, S3)
+### 🌍 Global Reach  
+Designed to accommodate users from anywhere in the world — making financial understanding accessible to everyone.
 
-## 🏗️ Architecture Overview
+### ⭐ Free Tier  
+Visualize your first bank statement for free before upgrading to the premium plan for more advanced insights.
 
-    |--> React (Frontend, hosted in S3 + CloudFront)
-    |
-    |--> API Gateway (REST API)
-    |
-    |--> AWS Lambda (Node.js)
-    |
-    |--> DynamoDB (Questions Table)
+### 👨🏾‍💻 Community-Driven  
+Built based on feedback from real users and everyday financial challenges faced by individuals and small businesses.
 
+### 📊📈 Data Visualization  
+Transforms raw statement data into meaningful graphs and visual summaries, helping users quickly identify trends and anomalies.
 
 ---
 
-## 🧰 Tech Stack  
+## 🎯 Our Goals
 
-| Layer       | Technology                     |
-|-------------|--------------------------------|
-| Frontend    | React (Vite or CRA), S3, CloudFront |
-| Backend     | Node.js (AWS Lambda)           |
-| Database    | DynamoDB                       |
-| Infrastructure | AWS CDK (TypeScript/Python/Java) |
-| API         | Amazon API Gateway             |
+- **Simplify Financial Understanding** – Turn complex bank statements into clear, easy-to-read insights.  
+- **Promote Financial Awareness** – Help users recognize spending patterns, income trends, and savings opportunities.  
+- **Build a Learning Community** – Create a space where people can share financial tips and experiences.  
+- **Deliver Actionable Insights** – Continuously improve our tools to help users make informed financial decisions.
 
 ---
 
-## 📂 Repository Structure  
+## 🧩 Tech Stack
 
-- `frontend/` → React application (UI, hosted on S3 + CloudFront)  
-- `backend/` → Node.js Lambda functions + DynamoDB operations  
-- `infrastructure/` → AWS CDK stack for IaC (API Gateway, Lambda, DynamoDB, S3)  
-
----
-
-## 📈 Future Enhancements  
-
-- 📝 User progress tracking with **Cognito authentication**  
-- 🧪 Timed practice exams for real-world simulation  
-- 📊 Score calculation and performance dashboards  
-- 🌍 Internationalization (multi-language support)  
+- **Frontend:** React / Next.js  
+- **Backend:** Node.js / Express  
+- **Database:** MongoDB or PostgreSQL  
+- **File Processing:** CSV and PDF parsing  
+- **Visualization:** Chart.js or Recharts  
+- **Authentication:** JWT / OAuth  
+- **Styling:** CSS Modules / Tailwind CSS  
 
 ---
 
-## 📋 Services Used  
+## 🗂️ How It Works
 
-- **Amazon S3 + CloudFront** → Static site hosting (React frontend)  
-- **Amazon API Gateway** → REST API for backend communication  
-- **AWS Lambda** → Node.js backend functions  
-- **Amazon DynamoDB** → NoSQL database for storing questions and answers  
-- **AWS CDK** → Infrastructure as Code  
-
----
-
-## 🎥 Demo  
-
-📺 [Demo Video Link](#) *(~3 minutes — will showcase app usage and architecture overview)*  
+1. **Upload** your bank statement (CSV or PDF).  
+2. **Parse & Analyze** – The app reads transactions, categorizes spending, and calculates summaries.  
+3. **Visualize** – Displays results as charts and tables showing expenses, income, and trends.  
+4. **Save or Export** insights for budgeting and reporting.
 
 ---
 
-## ✅ Submission Checklist  
+## ⚙️ Getting Started
 
-- [x] Serverless application  
-- [x] Infrastructure defined with AWS CDK  
-- [x] Real-world problem: AWS exam preparation platform  
-- [x] Public GitHub repository with `README.md`  
-- [x] Demo video uploaded to YouTube (~3 minutes)  
-- [x] Services list included (see above)  
-- [ ] Submission form completed  
+### Prerequisites
+- Node.js (v18+)
+- npm or yarn
+- Git
 
----
-
-💡 *Practice Solution makes exam prep more engaging and scalable using the power of AWS Serverless.*  
+### Installation
+```bash
+git clone https://github.com/yourusername/bank-statement-analyzer.git
+cd bank-statement-analyzer
+npm install
