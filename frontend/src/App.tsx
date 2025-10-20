@@ -5,7 +5,7 @@ import React from "react";
 
 import Home from "./pages/Home.tsx";
 import About from "./pages/About.tsx";
-import Main from "./Main/Main.tsx";
+import Main from "./pages/HowItWorkds.tsx";
 import ExamSelectionBasePage from "./pages/Exam/ExamSelectionBasePage.tsx";
 import ExamBasePage from "./pages/Exam/ExamBasePage.tsx";
 import ExamSummaryPage from "./pages/Exam/ExamSummaryPage.tsx";
