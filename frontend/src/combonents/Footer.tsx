@@ -4,28 +4,28 @@ import { Link } from "react-router";
 
 function Footer() {
   const currentYear = new Date().getFullYear();
-  const githubLink = "https://github.com/McDonaldMusimwa/practiceaws.git";
-  const examLink =
-    "https://aws.amazon.com/certification/certified-solutions-architect-associate/";
+  const githubLink = "https://github.com/McDonaldMusimwa/bank-statement-analyzer.git";
+  const learnLink = "https://www.investopedia.com/articles/personal-finance/";
 
   return (
     <footer className={styles.footer}>
       <div>
-        <h3>AWS Cloud Prep</h3>
+        <h3>Bank Statement Analyzer</h3>
         <p>
-          Prepare for your AWS cloud certification exams with our comprehensive
-          and interactive resources. We provide a seamless learning experience,
-          with a clean and modern user interface.
+          Empowering individuals to understand their finances through smart
+          data visualization. Upload your statements, uncover spending patterns,
+          and make confident financial decisions.
         </p>
         <p>
-          &copy; {currentYear} AWS Practice Solution App. Built with 💻 to help
-          learners succeed.
+          &copy; {currentYear} Bank Statement Analyzer. Built with 💻 and 💡
+          to help users gain financial clarity.
         </p>
         <p className={styles.links}></p>
       </div>
+
       <div>
-        <Link to={examLink} target="_blank" rel="noopener noreferrer">
-          Learn about the SAA-C03 Exam
+        <Link to={learnLink} target="_blank" rel="noopener noreferrer">
+          Learn About Financial Literacy
         </Link>
         <Link to={githubLink} target="_blank" rel="noopener noreferrer">
           <FaGithub />

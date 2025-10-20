@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Roboto Flex", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -13,11 +15,11 @@
   -moz-osx-font-smoothing: grayscale;
 
   --federal-blue: #03045eff;
---honolulu-blue: #0077b6ff;
---pacific-cyan: #00b4d8ff;
---non-photo-blue: #90e0efff;
---light-cyan: #dff6fb;
---white-cyna:#ffffff;
+  --honolulu-blue: #0077b6ff;
+  --pacific-cyan: #00b4d8ff;
+  --non-photo-blue: #90e0efff;
+  --light-cyan: #dff6fb;
+  --white-cyna: #ffffff;
 }
 
 a {
@@ -30,8 +32,6 @@ a:hover {
 }
 
 body {
-
-
   min-width: 320px;
   min-height: 100vh;
 }
@@ -42,21 +42,20 @@ h1 {
 }
 
 button {
-  border-radius: .2rem;
+  border-radius: 0.2rem;
   border: 1px solid transparent;
   padding: 0.9rem 3rem;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color:#89F336;
+  background-color: #89f336;
   color: #0c0c0c;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
   background-color: #f7f8f7;
-  border:.2px solid #89F336
-  
+  border: 0.2px solid #89f336;
 }
 button:focus,
 button:focus-visible {
@@ -69,15 +68,14 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #89F336;
+    color: #89f336;
   }
   button {
-    background-color: #89F336;
+    background-color: #89f336;
     color: #0c0c0c;
   }
-    button:hover {
+  button:hover {
     background-color: #ffffff;
-    border:.2px solid #89F336
-    
+    border: 0.2px solid #89f336;
   }
 }

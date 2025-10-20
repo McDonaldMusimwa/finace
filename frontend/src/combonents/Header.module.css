@@ -50,7 +50,7 @@ justify-content: center;
   display: flex;
   align-items: center;
   gap: 1rem;
-  border: 1px solid rgb(190, 190, 190);
+ /* border: 1px solid rgb(190, 190, 190);*/
   border-radius: 6px;
   padding: 5px;
 }
@@ -66,14 +66,14 @@ justify-content: center;
 .links a:hover {
   background-color:var(--honolulu-blue); /* green hover */
   color: #fff;
-  border: 0.5px solid #ff6600;
+  border: 0.5px solid var(--honolulu-blue);
 }
 
 .activeLink {
   /* cyan for active */
   background-color: var(--honolulu-blue); /* green hover */
-  color: var(--light-cyan);
-  border: 0.5px solid #ff6600;
+  color: var(--white-cyna);
+
 }
 .userName {
   font-size: 0.8rem;

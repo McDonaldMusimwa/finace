@@ -3,7 +3,7 @@
   max-width: 1280px;
   margin: 0 auto;
   text-align: center;
-  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Roboto Flex", sans-serif;
   color: #213547;
   background: #f9fafb;
 }
@@ -16,7 +16,7 @@
   background: linear-gradient(135deg, #ff6600 0%, #f97316 50%, #ff9248 100%);
   border-radius: 0 0 40px 40px;
   color: white;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .heroTitle {
@@ -56,7 +56,7 @@
   height: 200px;
   border: 2px solid #89f336;
   border-radius: 18px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
   font-size: 1.2rem;
   font-weight: 600;
   display: flex;

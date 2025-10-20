@@ -27,7 +27,7 @@
 
   padding: 1rem;
   /*background-color: var(--white-cyna);*/
-  box-shadow: 1px 1px 1px 1px var(--light-cyan);
+background-color: rgba(238, 249, 252, 0.677);
  
 
   border-radius: 8px;

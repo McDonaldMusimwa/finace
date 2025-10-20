@@ -67,18 +67,32 @@ margin: 0;
     /* If the image should fade to black, use rgba(0, 0, 0, 0) and #000 at the end */
 }
 .header {
-
+  display: flex; /* Assuming you intended to use flexbox for centering */
   align-items: center;
   justify-content: space-between;
   padding: 3rem 2rem;
+  color: var(--white-cyna);
+  
+  /* --- IMAGE ADJUSTMENTS START HERE --- */
+  background-image: url("../assets/businesslady.jpg");
+  
+  /* 1. Use 'cover' to make it fill the container, cropping if necessary */
+  background-size: cover; 
+  
+  /* 2. Center the image to avoid awkward cropping */
+  background-position: center; 
+  
+  /* 3. Ensure the image doesn't tile */
+  background-repeat: no-repeat; 
 
-
+  /* object-fit is not needed for background-image */
 }
 .heroContainer{
   display: grid;
 grid-template-columns: 50% 50%;
   align-items: center;
   margin-top: 1rem;
+  gap: 1rem;
 }
 
 /* Updated .blur class with a linear gradient */
@@ -105,12 +119,13 @@ display: flex;
 flex-direction: column;
 align-items: center;
 gap: 1.5rem;
+color: var(--white-cyna);
   }
 
 .heroContent p {
   font-size: 1.2rem;
 
-  color: #333;
+
   margin-bottom: 1.5rem;
 }
 
@@ -176,8 +191,9 @@ gap: 1.5rem;
 .cta {
   text-align: center;
   padding: 3rem 2rem;
-  background-color: #88f33686;
+  background-color: var(--non-photo-blue);
   border-radius: .2rem;
+  color: var(--white-cyna);
 }
 .ctaButton {
   background-color: var(--honolulu-blue);
@@ -190,6 +206,7 @@ gap: 1.5rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
    animation: pulse 2s infinite;
+   margin: 1rem 0;
 }
 
 .cta h2 {
@@ -212,9 +229,8 @@ gap: 1.5rem;
 }
 
 .highlight {
-  color: #f6ad55;
+  color:var(--federal-blue) ;
 }
-
 /* button animation */
 @keyframes pulse {
   0% {

@@ -1,6 +1,6 @@
 import styles from "./Home.module.css";
 import { useNavigate } from "react-router";
-import HeroImage from "../assets/hero.png";
+//import HeroImage from "../assets/businesslady.jpg";
 import { motion } from "framer-motion";
 import HeroCards from "../combonents/UI/HeroCards";
 
@@ -11,12 +11,14 @@ export default function Home() {
   return (
     <main className={styles.container}>
       <section className={`${styles.header}`}>
-        <div className={styles.introSection}>
-          <h2>Unlock Your Financial Story</h2>
-          <p>Master your money , Faster than you spend your money</p>
-        </div>
-
         <div className={styles.heroContainer}>
+          <div className={styles.introSection}>
+            <h2>Unlock Your Financial Story</h2>
+            <p>Master your money , Faster than you spend your money</p>
+            <button className={styles.ctaButton} onClick={navigateToQuestion}>
+              🚀 Analyze your First Statement
+            </button>
+          </div>
           <div className={styles.heroContent}>
             <p>
               Upload your first{" "}
@@ -27,10 +29,8 @@ export default function Home() {
             </p>
 
             <HeroCards />
-            <button className={styles.ctaButton} onClick={navigateToQuestion}>
-              🚀 Analyze your First Statement
-            </button>
           </div>
+          {/*   
           <motion.div
             className={styles.heroImage}
             initial={{ opacity: 0, x: 100 }}
@@ -46,7 +46,7 @@ export default function Home() {
 
             <div className={styles.imageArea}></div>
             <div className={styles.blendingoverlay}></div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </section>
 
@@ -94,38 +94,41 @@ export default function Home() {
       </motion.div>
 
       <section className={styles.section}>
-  <h2>Our Goals</h2>
-  <div className={styles.grid}>
-    <div className={styles.card}>
-      <h3>🎯 Simplify Financial Understanding</h3>
-      <p>
-        Make it easy for users to interpret complex bank statements through clear visuals and organized summaries.
-      </p>
-    </div>
+        <h2>Our Goals</h2>
+        <div className={styles.grid}>
+          <div className={styles.card}>
+            <h3>🎯 Simplify Financial Understanding</h3>
+            <p>
+              Make it easy for users to interpret complex bank statements
+              through clear visuals and organized summaries.
+            </p>
+          </div>
 
-    <div className={styles.card}>
-      <h3>🧠 Promote Financial Awareness</h3>
-      <p>
-        Empower individuals to understand their spending habits, income trends, and saving patterns with meaningful insights.
-      </p>
-    </div>
+          <div className={styles.card}>
+            <h3>🧠 Promote Financial Awareness</h3>
+            <p>
+              Empower individuals to understand their spending habits, income
+              trends, and saving patterns with meaningful insights.
+            </p>
+          </div>
 
-    <div className={styles.card}>
-      <h3>🌐 Build a Learning Community</h3>
-      <p>
-        Foster a supportive space where users can share ideas, discuss financial habits, and learn better money management together.
-      </p>
-    </div>
+          <div className={styles.card}>
+            <h3>🌐 Build a Learning Community</h3>
+            <p>
+              Foster a supportive space where users can share ideas, discuss
+              financial habits, and learn better money management together.
+            </p>
+          </div>
 
-    <div className={styles.card}>
-      <h3>📈 Deliver Actionable Insights</h3>
-      <p>
-        Continuously enhance data interpretation with updated tools and smart analytics to help users make informed financial decisions.
-      </p>
-    </div>
-  </div>
-</section>
-
+          <div className={styles.card}>
+            <h3>📈 Deliver Actionable Insights</h3>
+            <p>
+              Continuously enhance data interpretation with updated tools and
+              smart analytics to help users make informed financial decisions.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <section className={styles.cta}>
         <h2>
