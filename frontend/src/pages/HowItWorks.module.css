@@ -55,3 +55,15 @@
   gap: 2rem;
   margin: 2rem 1rem;
 }
+/* PRICING */
+.pricingTitle{
+    display: flex;
+    flex-direction: row;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cardsSection{
+    flex-direction: column;
+  }
+}

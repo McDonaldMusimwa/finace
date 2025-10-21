@@ -1,31 +1,10 @@
 import styles from "./HowItWorks.module.css";
-import { FcUpload, FcReadingEbook, FcBusinesswoman } from "react-icons/fc";
+import steps from "../const/steps.tsx"
+import pricing from "../const/pricing.ts";
 import Card from "../combonents/UI/CardX2";
-
+import PricingCard from "../combonents/UI/PricingCard.tsx"
 function Main() {
-  const steps = [
-    {
-      key: 1,
-      name: "Log In",
-      icon: <FcBusinesswoman />,
-      description:
-        "Create an account or sign in securely to get started with your personal financial dashboard.",
-    },
-    {
-      key: 2,
-      name: "Upload",
-      icon: <FcUpload />,
-      description:
-        "Upload your bank statement in CSV or PDF format. Our system automatically reads and processes your data.",
-    },
-    {
-      key: 3,
-      name: "Analyze & Understand",
-      icon: <FcReadingEbook />,
-      description:
-        "Explore clear visual summaries of your transactions to understand your spending habits and financial behavior.",
-    },
-  ];
+ 
 
   return (
     <main className={styles.main}>
@@ -48,6 +27,20 @@ function Main() {
               name={item.name}
               iconSrc={item.icon}
               description={item.description}
+            />
+          ))}
+        </div>
+      </section>
+      <section>
+                <h3 className={styles.pricingTitle}>Pricing</h3>
+        <div className={styles.cardsSection}>
+          {pricing.map((item) => (
+            <PricingCard
+              key={item.key}
+              name={item.price.toString()}
+   
+              type={item.type}
+              benefits={item.benefits}
             />
           ))}
         </div>
