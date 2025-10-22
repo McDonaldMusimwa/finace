@@ -34,6 +34,7 @@
   font-size: 0.95rem;
   color: #333;
   width: 60%;
+  border: .1rem solid var(--honolulu-blue);
 }
 .card svg {
   font-size: 3rem;

@@ -39,45 +39,47 @@ function App() {
   };
 
   return (
-   <BrowserRouter>
-  <Header />
-  <Routes>
-    <Route index path="/" element={<Home />} />
-    <Route path="About" element={<About />} />
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route index path="/" element={<Home />} />
+        <Route path="About" element={<About />} />
 
-    {/* Questionares routes */}
-    <Route path="Background" element={<Main />} />
+        {/* Questionares routes */}
+        <Route path="Background" element={<Main />} />
 
-    {/* Selection page for an exam */}
-    <Route path="Questionares/:examcode" element={<ExamSelectionBasePage />} />
+        {/* Selection page for an exam */}
+        <Route
+          path="Questionares/:examcode"
+          element={<ExamSelectionBasePage />}
+        />
 
-    {/* Exam page per section */}
-    <Route
-      path="Questionares/:examcode/:section_module"
-      element={
-        <ProtectedRoute>
-          <ExamBasePage />
-        </ProtectedRoute>
-      }
-    />
+        {/* Exam page per section */}
+        <Route
+          path="Questionares/:examcode/:section_module"
+          element={
+            <ProtectedRoute>
+              <ExamBasePage />
+            </ProtectedRoute>
+          }
+        />
 
-    {/* Summary page */}
-    <Route
-      path="Questionares/:examcode/:section_module/Summary"
-      element={
-        <ProtectedRoute>
-          <ExamSummaryPage />
-        </ProtectedRoute>
-      }
-    />
+        {/* Summary page */}
+        <Route
+          path="Questionares/:examcode/:section_module/Summary"
+          element={
+            <ProtectedRoute>
+              <ExamSummaryPage />
+            </ProtectedRoute>
+          }
+        />
 
-    {/* Auth */}
-    <Route path="Login" element={<Login />} />
-    <Route path="Signup" element={<SignUp />} />
-  </Routes>
-  <Footer />
-</BrowserRouter>
-
+        {/* Auth */}
+        <Route path="Login" element={<Login />} />
+        <Route path="Signup" element={<SignUp />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
 
