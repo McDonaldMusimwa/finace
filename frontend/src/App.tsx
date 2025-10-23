@@ -2,10 +2,10 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router";
 import Header from "./combonents/Header.tsx";
 import Footer from "./combonents/Footer.tsx";
 import React from "react";
-
+//import { useRoutes } from "react-router";
 import Home from "./pages/Home.tsx";
 import About from "./pages/About.tsx";
-import Main from "./pages/HowItWorkds.tsx";
+import HowitWorks from "./pages/HowItWorkds.tsx";
 import ExamSelectionBasePage from "./pages/Exam/ExamSelectionBasePage.tsx";
 import ExamBasePage from "./pages/Exam/ExamBasePage.tsx";
 import ExamSummaryPage from "./pages/Exam/ExamSummaryPage.tsx";
@@ -14,6 +14,7 @@ import Login from "./pages/Auth/Login.tsx";
 import SignUp from "./pages/Auth/Register.tsx";
 
 import { useAuth } from "react-oidc-context";
+
 
 function App() {
   const auth = useAuth();
@@ -37,7 +38,19 @@ function App() {
 
     return children;
   };
+  /*
+const routes =useRoutes( [
+  {path:"/",
+    element:<Home />
+  },{
+    path:"/About",
+    element:<About />
+  },
+  {
+    path:"HowItWorks",element:<HowitWorks />
 
+  }
+])*/
   return (
     <BrowserRouter>
       <Header />
@@ -46,7 +59,7 @@ function App() {
         <Route path="About" element={<About />} />
 
         {/* Questionares routes */}
-        <Route path="Background" element={<Main />} />
+        <Route path="Background" element={<HowitWorks />} />
 
         {/* Selection page for an exam */}
         <Route
