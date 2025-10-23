@@ -249,8 +249,8 @@ color: var(--white-cyna);
 
 /*mobile */
 @media (max-width: 768px) {
-  .container {
-  
+  .heroContainer {
+grid-template-columns: 100%;
   }
 
   .container > img {

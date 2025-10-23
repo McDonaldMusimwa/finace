@@ -5,6 +5,7 @@
   font-family: 'Segoe UI', Tahoma, sans-serif;
   color: #333;
   line-height: 1.6;
+  background-color: var(--light-cyan);
 }
 
 .section {
@@ -62,7 +63,7 @@
 }
 
 .cta {
-  background-color:#88f33686;
+  background-color:var(--non-photo-blue);
   padding: 2.5rem;
   text-align: center;
   border-radius: 6px;
@@ -76,21 +77,21 @@
 }
 
 .ctaButton {
-  background: #fff;
-  color: #ff6600;
-  border: none;
-  padding: 0.8rem 2rem;
-  border-radius: 6px;
+  background-color: var(--federal-blue);
+  color: #fff;
+  padding: 1rem 2rem;
   font-size: 1.1rem;
-  font-weight: 600;
+  border: none;
+  border-radius: 12px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
 .ctaButton:hover {
-  background: #f2f2f2;
-  transform: scale(1.05);
+  background-color: var(--honolulu-blue);
+  transform: translateY(-3px);
 }
+
 
 .icon {
   color: #ff9900;

@@ -26,18 +26,24 @@
 .card {
   padding: 1rem;
   /*background-color: var(--white-cyna);*/
-  background-color: rgba(238, 249, 252, 0.677);
-
+  background-color: var( --non-photo-blue);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   border-radius: 8px;
   font-size: 0.95rem;
   color: #333;
+  width: 60%;
+  border: .1rem solid var(--honolulu-blue);
 }
 .card svg {
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 .card .name {
-  font-size: 0.6rem;
+  font-size: 0.rem;
+  color:var(--honolulu-blue);
+  font-weight: 700;
 }
 .card:hover {
   cursor: pointer;
@@ -48,4 +54,15 @@
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
+}
+.benefits{
+  list-style: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+.card{
+    width: 100%;
+    padding: .2rem;
+}
 }

@@ -6,7 +6,7 @@ import HeroCards from "../combonents/UI/HeroCards";
 
 export default function Home() {
   const navigation = useNavigate();
-  const navigateToQuestion = () => navigation("/Questionares");
+  const navigateToQuestion = () => navigation("/Login");
 
   return (
     <main className={styles.container}>
