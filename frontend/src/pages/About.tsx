@@ -59,7 +59,7 @@ function AboutPage() {
         </h3>
         <button
           className={styles.ctaButton}
-          onClick={() => navigation("/upload")}
+          onClick={() => navigation("/Login")}
         >
           🚀 Get Started
         </button>

@@ -1,12 +1,12 @@
 .footer {
- background-color: #cbf8a986;
+ background-color: var(--white-cyna);
   padding: .5rem 1rem;
   text-align: center;
   font-size: 0.95rem;
   color: #333;
+    box-shadow: 1px 1px 1px 2px rgb(190, 190, 190);
    /* green accent */
- display: grid;
- grid-template-columns: 50% 50%;
+
 
  /*
  flex-direction: row;
@@ -15,6 +15,16 @@
   margin-top: 3.5rem;
   flex-wrap: wrap;
   gap: 0.5rem;*/
+}
+.footertop{
+  display: flex;
+}
+.footerbottom{
+border-top: 1px solid rgb(190, 190, 190);
+padding: .5rem;
+}
+.footerbranding{
+  display: flex;
 }
 .footer div {
   margin: 0.5rem 0;

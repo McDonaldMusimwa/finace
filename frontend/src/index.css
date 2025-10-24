@@ -34,6 +34,7 @@ a:hover {
 body {
   min-width: 320px;
   min-height: 100vh;
+  background: linear-gradient(135deg, #e8f1ff, #f9fbfd);
 }
 
 h1 {

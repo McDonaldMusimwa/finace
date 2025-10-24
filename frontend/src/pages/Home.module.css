@@ -2,7 +2,7 @@
 
 .container {
   font-family: "Inter", sans-serif;
-  background: linear-gradient(135deg, #e8f1ff, #f9fbfd);
+
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -72,7 +72,7 @@ margin: 0;
   justify-content: space-between;
   padding: 3rem 2rem;
   color: var(--white-cyna);
-  
+  width: 100%;
   /* --- IMAGE ADJUSTMENTS START HERE --- */
   background-image: url("../assets/businesslady.jpg");
   
