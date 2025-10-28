@@ -1,7 +1,17 @@
 const pricing = [
   {
-    price: 10,
+    price: "free",
     key: 1,
+    benefits: [
+      { name: "Free trial" },
+      { name: "Limitted access" },
+      { name: "Once off a year access" }
+      
+    ],
+    type: "monthly"
+  },{
+    price: 10,
+    key: 2,
     benefits: [
       { name: "Billed every month" },
       { name: "Full access to all analysis features" },
@@ -17,7 +27,7 @@ const pricing = [
   },
   {
     price: 100,
-    key: 2,
+    key: 3,
     benefits: [
       { name: "Save 17% compared to monthly plan" },
       { name: "Billed once per year" },

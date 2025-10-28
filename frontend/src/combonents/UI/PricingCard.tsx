@@ -1,27 +1,16 @@
 import styles from "./CardX2.module.css";
-import React from "react";
-
-interface Benefit {
-  name: string;
-}
-
-interface CardProps {
-  name: string;
+import type { PricingCardProps } from "../../const/types";
 
 
 
-  benefits: Benefit[];
-  type:string
-}
-
-function Card({ name,type, benefits }: CardProps) {
+function Card({ name,type, benefits }: PricingCardProps) {
   return (
-    <div className={styles.card}>
+    <div className={styles.pricingcard}>
 
 
       <p className={styles.name}>$ {name} {type} </p>
 
-      <p className={styles.description}>whats included</p>
+      <p className={styles.flag}>whats included</p>
       <ul className={styles.benefits}>
         {benefits.map((benefit, index) => {
           return (
@@ -30,7 +19,7 @@ function Card({ name,type, benefits }: CardProps) {
           
 
               {/* CORRECTED: Access the 'name' property of the benefit object */}
-              ✓ {benefit.name}
+              ✓       {benefit.name}
             </li>
           );
         })}
