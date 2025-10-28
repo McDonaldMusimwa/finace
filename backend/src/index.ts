@@ -1,6 +1,6 @@
 import express from "express"
 import type { Express } from "express"
-/*
+/* line 3 to line 10*/
 import { PdfReader } from "pdfreader";
 
 new PdfReader().parseFileItems("./src/pdf/jan.pdf", (err, item) => {
@@ -8,7 +8,7 @@ new PdfReader().parseFileItems("./src/pdf/jan.pdf", (err, item) => {
   else if (!item) console.warn("end of file");
   else if (item.text) console.log(item.text);
 });
-*/
+
 import fs from "fs";
 import PDFParser from "pdf2json"; 
 interface PatchedPDFParser extends PDFParser {
