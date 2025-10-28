@@ -1,31 +1,34 @@
 {
-  "name": "backend",
+  "name": "finace",
   "version": "1.0.0",
+  "description": "Server for finace a bank statement analysis web application",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "seed": "node seed.mjs",
-    "dev": "node testDynamo.mjs",
-    "dev2": "nodemon index.js"
+    "build": "node dist/index.js",
+    "start": "npx tsc && node dist/index.js",
+    "dev": "nodemon"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/McDonaldMusimwa/finace.git"
+  },
+  "author": "McDonald Musimwa",
   "license": "ISC",
-  "description": "",
+  "bugs": {
+    "url": "https://github.com/McDonaldMusimwa/finace/issues"
+  },
+  "homepage": "https://github.com/McDonaldMusimwa/finace#readme",
   "dependencies": {
-    "@aws-sdk/client-dynamodb": "^3.859.0",
-    "@aws-sdk/lib-dynamodb": "^3.859.0",
-    "@prisma/client": "^6.13.0",
-    "aws-sdk": "^2.1500.0",
-    "dotenv": "^17.2.1",
     "express": "^5.1.0",
-    "prisma": "^6.13.0",
-    "uuid": "^11.1.0"
+    "pdf2json": "^3.1.4",
+    "pdfreader": "^3.0.7"
   },
   "devDependencies": {
-    "@types/express": "^5.0.3",
+    "@tsconfig/node20": "^20.1.6",
+    "@types/express": "^5.0.5",
     "nodemon": "^3.1.10",
-    "ts-node-dev": "^2.0.0"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
   }
 }
