@@ -1,7 +1,16 @@
 const pricing = [
   {
-    price: 10,
+    price: 1,
     key: 1,
+    benefits: [
+      { name: "One time access" },
+      
+    ],
+    type: "once"
+  },
+  {
+    price: 10,
+    key: 2,
     benefits: [
       { name: "Billed every month" },
       { name: "Full access to all analysis features" },

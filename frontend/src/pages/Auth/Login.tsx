@@ -1,5 +1,5 @@
 import styles from "./Auth.module.css";
-import practiceimg from "../../assets/practice.png";
+import practiceimg from "../../assets/hero1.png";
 import { useAuth } from "react-oidc-context";
 
 function Login() {

@@ -83,7 +83,7 @@
 
 .form button {
   padding: 0.8rem;
-  background: #32cd32;
+  background: var(--pacific-cyan);
   color: white;
   border: none;
   border-radius: 8px;

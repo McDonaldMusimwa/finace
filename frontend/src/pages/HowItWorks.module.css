@@ -1,7 +1,7 @@
 .main{
     height: auto;
     margin-top:70px;
-    background-color: var(--light-cyan);
+    background-color: var(background-color);
 }
 
 /* Hero Section */
@@ -57,13 +57,14 @@
 }
 /* PRICING */
 .pricingTitle{
-    display: flex;
-    flex-direction: row;
+
+    text-align: center;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .cardsSection{
     flex-direction: column;
+ align-items: center;
   }
 }

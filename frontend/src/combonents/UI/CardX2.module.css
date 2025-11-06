@@ -25,8 +25,8 @@
 
 .card {
   padding: 1rem;
-  /*background-color: var(--white-cyna);*/
-  background-color: var( --non-photo-blue);
+  background-color: var(--white-cyna);
+
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -35,33 +35,72 @@
   color: #333;
   width: 60%;
 }
+.pricingcard {
+  padding: 1rem;
+  background-color: var(--white-cyna);
+  border: 2px solid var(--honolulu-blue);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #333;
+  width: 50%;
+}
 .card svg {
   font-size: 3rem;
 }
 
-.card .name {
-  font-size: 0.rem;
-  color:var(--honolulu-blue);
+.pricingcard .name {
+  font-size: 0rem;
+  color: var(--honolulu-blue);
   font-weight: 700;
+  text-align: center;
 }
-.card:hover {
+.pricingcard .description {
+  font-size: 0rem;
+  color: var(--honolulu-blue);
+  font-weight: 700;
+  text-align: center;
+}
+.pricingcard:hover {
   cursor: pointer;
 }
+.pricingcard .benefits {
+  text-align: left;
+}
+.belt {
 
+display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+
+  border-radius: 0 4px 0 32px;
+  background-color: var(--honolulu-blue);
+}
 /* Hero cards */
 .HeroCards {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
 }
-.benefits{
+.benefits {
   list-style: none;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-.card{
+  .card {
     width: 100%;
-    padding: .2rem;
-}
+    padding: 0.2rem;
+  }
+  .pricingcard {
+    width: 90%;
+  }
 }

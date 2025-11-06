@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router";
 import Header from "./combonents/Header.tsx";
 import Footer from "./combonents/Footer.tsx";
 import React from "react";
-
+import { AuthenticationContext,defaultAuthContext } from "./store/store.ts";
 import Home from "./pages/Home.tsx";
 import About from "./pages/About.tsx";
 import Main from "./pages/HowItWorkds.tsx";
@@ -39,6 +39,8 @@ function App() {
   };
 
   return (
+
+    <AuthenticationContext value={defaultAuthContext}>
    <BrowserRouter>
   <Header />
   <Routes>
@@ -77,7 +79,7 @@ function App() {
   </Routes>
   <Footer />
 </BrowserRouter>
-
+</AuthenticationContext>
   );
 }
 
