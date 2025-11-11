@@ -122,3 +122,32 @@
   padding: 1rem;
 
 }
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .container {
+    padding: 0.75rem;
+  }
+  .form {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .formActions {
+    margin-left: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .viewerArea {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .fileList {
+    width: 100%;
+  }
+  .previewPane {
+    min-height: 240px;
+  }
+  .iframe {
+    height: 320px;
+  }
+}

@@ -1,0 +1,11 @@
+.auth-pages-layout {
+    margin-left: 200px;
+}
+
+/* On mobile, add bottom padding to avoid overlap with fixed bottom nav (56px) */
+@media (max-width: 768px) {
+    .auth-pages-layout {
+        margin-left: 0;
+        padding-bottom: 56px;
+    }
+}

@@ -14,11 +14,16 @@ import { useUser } from "@clerk/clerk-react";
 import Statements from "./pages/dashboard/Statements.tsx";
 import Settings from "./pages/dashboard/Settings.tsx";
 import Profile from "./pages/dashboard/Profile.tsx";
-
+import gifloader from "../public/Fidgetspinner.gif"
 function App(): React.JSX.Element {
   const { isSignedIn, isLoaded } = useUser();
 
-  if (!isLoaded) return <div>Loading app...</div>;
+  if (!isLoaded) return <div style={{
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100vh", // full viewport height
+  }} ><img src={gifloader} alt="Loading..." /></div>;
 
   return (
     <>
