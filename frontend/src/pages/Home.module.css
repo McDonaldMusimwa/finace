@@ -2,7 +2,7 @@
 
 .container {
   font-family: "Inter", sans-serif;
-
+  background: var(background-color);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -72,7 +72,7 @@ margin: 0;
   justify-content: space-between;
   padding: 3rem 2rem;
   color: var(--white-cyna);
-  width: 100%;
+  
   /* --- IMAGE ADJUSTMENTS START HERE --- */
   background-image: url("../assets/businesslady.jpg");
   
@@ -249,8 +249,8 @@ color: var(--white-cyna);
 
 /*mobile */
 @media (max-width: 768px) {
-  .heroContainer {
-grid-template-columns: 100%;
+  .container {
+  
   }
 
   .container > img {

@@ -1,12 +1,13 @@
 import styles from "./Home.module.css";
-import { useNavigate } from "react-router";
+//import { useNavigate } from "react-router";
 //import HeroImage from "../assets/businesslady.jpg";
 import { motion } from "framer-motion";
 import HeroCards from "../combonents/UI/HeroCards";
 
 export default function Home() {
-  const navigation = useNavigate();
-  const navigateToQuestion = () => navigation("/Login");
+function navigateToQuestion(){
+
+}
 
   return (
     <main className={styles.container}>
