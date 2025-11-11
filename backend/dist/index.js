@@ -8,7 +8,7 @@ const indexRouter_1 = __importDefault(require("./routes/indexRouter"));
 /* line 3 to line 10*/
 const app = (0, express_1.default)();
 const PORT = 8000;
-app.get("/", indexRouter_1.default);
+app.use("/", indexRouter_1.default);
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });

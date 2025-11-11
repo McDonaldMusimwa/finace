@@ -9,5 +9,5 @@ const indexRouter = express_1.default.Router();
 indexRouter.get("/", (req, res) => {
     res.status(200).json({ message: "Server running nOW" });
 });
-indexRouter.use('/statements', statements_1.default);
+indexRouter.use("/statement", statements_1.default);
 exports.default = indexRouter;

@@ -9,8 +9,11 @@ import Main from "./pages/HowItWorkds.tsx";
 import Login from "./pages/Auth/Login.tsx";
 import Dashboard from "./pages/dashboard/Dashboard.tsx";
 import ProtectedRoute from "./pages/Auth/ProtectedRoutes.tsx";
-import SideNav from "./combonents/Dashboard/ui/SideNav.tsx";
+import AuthenticatedOutlet from "./pages/Auth/AuthenticatedOutlet.tsx";
 import { useUser } from "@clerk/clerk-react";
+import Statements from "./pages/dashboard/Statements.tsx";
+import Settings from "./pages/dashboard/Settings.tsx";
+import Profile from "./pages/dashboard/Profile.tsx";
 
 function App(): React.JSX.Element {
   const { isSignedIn, isLoaded } = useUser();
@@ -36,11 +39,14 @@ function App(): React.JSX.Element {
         </>
       ) : (
         <>
-          <SideNav />
           <Routes>
             <Route element={<ProtectedRoute />}>
-              <Route path="/dashboard" element={<Dashboard />} />
-              {/* Add more authenticated routes here */}
+              <Route element={<AuthenticatedOutlet />}>
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/statements" element={<Statements />} />
+                <Route path="/settings" element={<Settings />} />
+                <Route path="/profile" element={<Profile />} />
+              </Route>
             </Route>
           </Routes>
         </>

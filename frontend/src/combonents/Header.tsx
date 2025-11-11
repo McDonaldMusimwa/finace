@@ -98,17 +98,13 @@ const auth ={
                     >
                       {authLink.name}
                     </NavLink>
-                    <span className={styles.userName}>
-                      {auth?.user?.profile.email}
-                    </span>
+                 
                   </div>
                 )}
 
                 {!isMobile && (
                   <div className={styles.authLinksDesktop}>
-                    <span className={styles.userName}>
-                      {auth?.user?.profile.email}
-                    </span>
+                  
                     <NavLink to={authLink.route}>{authLink.name}</NavLink>
                   </div>
                 )}
@@ -138,9 +134,7 @@ const auth ={
           </div>
           
             <div className={styles.authLinksDesktop}>
-              <span className={styles.userName}>
-                {auth?.user?.profile.email}
-              </span>
+              
               <NavLink to={authLink.route}>{authLink.name}</NavLink>
             </div>
           </>
