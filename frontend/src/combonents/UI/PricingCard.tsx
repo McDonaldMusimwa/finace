@@ -14,7 +14,7 @@ interface CardProps {
   type:string
 }
 
-function Card({ name,type, benefits }: CardProps) {
+function Card({ name,type, benefits }: CardProps):React.JSX.Element {
   return (
     <div className={styles.pricingCard}>
   {/* The belt element must be inside the card for positioning */}

@@ -10,13 +10,7 @@ import { motion, AnimatePresence } from "framer-motion";
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-const auth ={
-  user:{
-    profile:{
-      email:"mcdonald@gmail.com"
-    }
-  }
-}
+
 
   // Update on resize
   useEffect(() => {
