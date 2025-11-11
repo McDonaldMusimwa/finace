@@ -3,7 +3,11 @@ import { createContext } from "react";
 type AuthContextType = {
   isLogged: boolean;
   setAuth: (logged: boolean, token: string | null) => void;
-  authToken: string | null;
+  user?:{email:string|null
+    name:string | null
+    authToken: string | null;
+  }
+    
 };
 
 const defaultAuthContext: AuthContextType = {
@@ -12,7 +16,7 @@ const defaultAuthContext: AuthContextType = {
   setAuth: () => {
     console.warn("setAuth function was called outside of an AuthProvider");
   },
-  authToken: null,
+  user:{authToken: null,name:null,email:null}
 };
 const AuthenticationContext = createContext<AuthContextType>(defaultAuthContext);
 

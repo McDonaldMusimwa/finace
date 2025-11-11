@@ -1,85 +1,51 @@
-import { BrowserRouter, Route, Routes, Navigate } from "react-router";
+import { Route, Routes } from "react-router";
 import Header from "./combonents/Header.tsx";
 import Footer from "./combonents/Footer.tsx";
 import React from "react";
-import { AuthenticationContext,defaultAuthContext } from "./store/store.ts";
+import { SignUp } from "@clerk/clerk-react";
 import Home from "./pages/Home.tsx";
 import About from "./pages/About.tsx";
 import Main from "./pages/HowItWorkds.tsx";
-import ExamSelectionBasePage from "./pages/Exam/ExamSelectionBasePage.tsx";
-import ExamBasePage from "./pages/Exam/ExamBasePage.tsx";
-import ExamSummaryPage from "./pages/Exam/ExamSummaryPage.tsx";
-
 import Login from "./pages/Auth/Login.tsx";
-import SignUp from "./pages/Auth/Register.tsx";
+import Dashboard from "./pages/dashboard/Dashboard.tsx";
+import ProtectedRoute from "./pages/Auth/ProtectedRoutes.tsx";
+import SideNav from "./combonents/Dashboard/ui/SideNav.tsx";
+import { useUser } from "@clerk/clerk-react";
 
-import { useAuth } from "react-oidc-context";
+function App(): React.JSX.Element {
+  const { isSignedIn, isLoaded } = useUser();
 
-function App() {
-  const auth = useAuth();
-
-  const ProtectedRoute = ({
-    children,
-    section_module,
-  }: {
-    children: React.JSX.Element;
-    section_module?: string;
-  }) => {
-    // Always allow section 1
-    if (section_module === "1") {
-      return children;
-    }
-
-    // Require login for section 2+
-    if (!auth.isAuthenticated) {
-      return <Navigate to="/Login" replace />;
-    }
-
-    return children;
-  };
+  if (!isLoaded) return <div>Loading app...</div>;
 
   return (
+    <>
+      {!isSignedIn ? (
+        <>
+          <Header />
+          <Routes>
+            {/* Public Routes */}
+            <Route index element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/background" element={<Main />} />
 
-    <AuthenticationContext value={defaultAuthContext}>
-   <BrowserRouter>
-  <Header />
-  <Routes>
-    <Route index path="/" element={<Home />} />
-    <Route path="About" element={<About />} />
-
-    {/* Questionares routes */}
-    <Route path="Background" element={<Main />} />
-
-    {/* Selection page for an exam */}
-    <Route path="Questionares/:examcode" element={<ExamSelectionBasePage />} />
-
-    {/* Exam page per section */}
-    <Route
-      path="Questionares/:examcode/:section_module"
-      element={
-        <ProtectedRoute>
-          <ExamBasePage />
-        </ProtectedRoute>
-      }
-    />
-
-    {/* Summary page */}
-    <Route
-      path="Questionares/:examcode/:section_module/Summary"
-      element={
-        <ProtectedRoute>
-          <ExamSummaryPage />
-        </ProtectedRoute>
-      }
-    />
-
-    {/* Auth */}
-    <Route path="Login" element={<Login />} />
-    <Route path="Signup" element={<SignUp />} />
-  </Routes>
-  <Footer />
-</BrowserRouter>
-</AuthenticationContext>
+            {/* Auth */}
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
+          </Routes>
+          <Footer />
+        </>
+      ) : (
+        <>
+          <SideNav />
+          <Routes>
+            <Route element={<ProtectedRoute />}>
+              <Route path="/dashboard" element={<Dashboard />} />
+              {/* Add more authenticated routes here */}
+            </Route>
+          </Routes>
+        </>
+      )}
+    </>
   );
 }
 

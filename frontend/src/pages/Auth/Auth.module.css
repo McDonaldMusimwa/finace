@@ -4,9 +4,15 @@
   align-items: center;
   justify-content: center;
   gap: 3rem;
-
-  min-height: 70vh;
+padding-top: 1rem;
+height: auto;
   background: white;
+  margin-top: 100px;
+}
+
+
+.clerk{
+  margin: 1rem;
 }
 
 .loggedIn {
