@@ -1,0 +1,104 @@
+/* --- Variables --- */
+:root {
+  --primary-color: #0077b6;
+  --white-color: #ffffff;
+}
+
+/* --- 1. Main Card Styling --- */
+.pricingCard {
+  /* Set position relative for the absolute 'belt' positioning */
+  position: relative;
+  
+  /* Basic Card Look */
+  background-color: var(--white-color);
+  border: 3px solid var(--primary-color);
+  border-radius: 12px;
+  padding: 2rem 1.5rem; /* Padding inside the card */
+  margin: 1rem;
+  max-width: 300px;
+  overflow: hidden; /* Crucial: Hides the part of the ribbon that goes outside */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Nice shadow effect */
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.pricingCard:hover {
+  transform: translateY(-5px); /* Lift card slightly on hover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* --- 2. Belt/Ribbon Styling (The key element) --- */
+.belt {
+  /* Absolute positioning to place it at the top-right corner */
+  position:relative;
+
+
+  
+
+  background-color: var(--primary-color);
+ 
+  height: 50px; /* Height of the ribbon */
+  width: 150px;
+
+  transform: rotate(45deg) translate(25%, -25%);
+  right: 0;
+
+  transform-origin: top right;
+
+
+  z-index: 10;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  
+text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white-color);
+  font-weight: bold;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+/* --- 3. Content Styling --- */
+.name {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.description {
+  color: #555;
+  font-size: 1rem;
+  font-style: italic;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.benefits {
+  list-style: none; /* Remove default list bullets */
+  padding: 0;
+  margin-top: 0.5rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.benefitItem {
+  font-size: 0.95rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.checkMark {
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-right: 8px;
+  line-height: 1;
+}

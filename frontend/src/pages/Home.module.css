@@ -2,7 +2,7 @@
 
 .container {
   font-family: "Inter", sans-serif;
-
+  background: var(background-color);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -72,7 +72,7 @@ margin: 0;
   justify-content: space-between;
   padding: 3rem 2rem;
   color: var(--white-cyna);
-  width: 100%;
+  
   /* --- IMAGE ADJUSTMENTS START HERE --- */
   background-image: url("../assets/businesslady.jpg");
   
@@ -249,10 +249,6 @@ color: var(--white-cyna);
 
 /*mobile */
 @media (max-width: 768px) {
-  .heroContainer {
-grid-template-columns: 100%;
-  }
-
   .container > img {
     width: 100%;
     max-width: 300px;
@@ -331,5 +327,19 @@ grid-template-columns: 100%;
     width: 100%;
     padding: 0.8rem;
     font-size: 1rem;
+  }
+  .heroContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  /* Center .section vertically on mobile (full viewport) */
+  .section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
   }
 }

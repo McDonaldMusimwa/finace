@@ -4,13 +4,13 @@ import { NavLink } from "react-router";
 import { CiMenuBurger } from "react-icons/ci";
 import { IoCloseOutline } from "react-icons/io5";
 import { useState, useEffect } from "react";
-import { useAuth } from "react-oidc-context";
+
 import { motion, AnimatePresence } from "framer-motion";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-  const auth = useAuth();
+
 
   // Update on resize
   useEffect(() => {
@@ -22,19 +22,14 @@ function Header() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   //const profile = auth.user?.profile;
-  let name_auth;
-  if (auth.user) {
-    name_auth = "Logout";
-  } else {
-    name_auth = "Login";
-  }
+
 
   const navLinks = [
     { route: "/", name: "Home" },
-    { route: "Background", name: "How it works" },
-    { route: "About", name: "About" },
+    { route: "background", name: "How it works" },
+    { route: "about", name: "About" },
   ];
-  const authLink = { route: "Login", name: name_auth };
+  const authLink = { route: "login", name: "Login" };
 
   return (
     <header>
@@ -97,17 +92,13 @@ function Header() {
                     >
                       {authLink.name}
                     </NavLink>
-                    <span className={styles.userName}>
-                      {auth?.user?.profile.email}
-                    </span>
+                 
                   </div>
                 )}
 
                 {!isMobile && (
                   <div className={styles.authLinksDesktop}>
-                    <span className={styles.userName}>
-                      {auth?.user?.profile.email}
-                    </span>
+                  
                     <NavLink to={authLink.route}>{authLink.name}</NavLink>
                   </div>
                 )}
@@ -137,9 +128,7 @@ function Header() {
           </div>
           
             <div className={styles.authLinksDesktop}>
-              <span className={styles.userName}>
-                {auth?.user?.profile.email}
-              </span>
+              
               <NavLink to={authLink.route}>{authLink.name}</NavLink>
             </div>
           </>

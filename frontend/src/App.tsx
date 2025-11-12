@@ -1,98 +1,62 @@
-import { BrowserRouter, Route, Routes, Navigate } from "react-router";
+import { Route, Routes } from "react-router";
 import Header from "./combonents/Header.tsx";
 import Footer from "./combonents/Footer.tsx";
 import React from "react";
-//import { useRoutes } from "react-router";
+import { SignUp } from "@clerk/clerk-react";
 import Home from "./pages/Home.tsx";
 import About from "./pages/About.tsx";
-import HowitWorks from "./pages/HowItWorkds.tsx";
-import ExamSelectionBasePage from "./pages/Exam/ExamSelectionBasePage.tsx";
-import ExamBasePage from "./pages/Exam/ExamBasePage.tsx";
-import ExamSummaryPage from "./pages/Exam/ExamSummaryPage.tsx";
-
+import Main from "./pages/HowItWorkds.tsx";
 import Login from "./pages/Auth/Login.tsx";
-import SignUp from "./pages/Auth/Register.tsx";
+import Dashboard from "./pages/dashboard/Dashboard.tsx";
+import ProtectedRoute from "./pages/Auth/ProtectedRoutes.tsx";
+import AuthenticatedOutlet from "./pages/Auth/AuthenticatedOutlet.tsx";
+import { useUser } from "@clerk/clerk-react";
+import Statements from "./pages/dashboard/Statements.tsx";
+import Settings from "./pages/dashboard/Settings.tsx";
+import Profile from "./pages/dashboard/Profile.tsx";
+import gifloader from "../public/Fidgetspinner.gif"
+function App(): React.JSX.Element {
+  const { isSignedIn, isLoaded } = useUser();
 
-import { useAuth } from "react-oidc-context";
+  if (!isLoaded) return <div style={{
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100vh", // full viewport height
+  }} ><img src={gifloader} alt="Loading..." /></div>;
 
-
-function App() {
-  const auth = useAuth();
-
-  const ProtectedRoute = ({
-    children,
-    section_module,
-  }: {
-    children: React.JSX.Element;
-    section_module?: string;
-  }) => {
-    // Always allow section 1
-    if (section_module === "1") {
-      return children;
-    }
-
-    // Require login for section 2+
-    if (!auth.isAuthenticated) {
-      return <Navigate to="/Login" replace />;
-    }
-
-    return children;
-  };
-  /*
-const routes =useRoutes( [
-  {path:"/",
-    element:<Home />
-  },{
-    path:"/About",
-    element:<About />
-  },
-  {
-    path:"HowItWorks",element:<HowitWorks />
-
-  }
-])*/
   return (
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route index path="/" element={<Home />} />
-        <Route path="About" element={<About />} />
+    <>
+      {!isSignedIn ? (
+        <>
+          <Header />
+          <Routes>
+            {/* Public Routes */}
+            <Route index element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/background" element={<Main />} />
 
-        {/* Questionares routes */}
-        <Route path="Background" element={<HowitWorks />} />
-
-        {/* Selection page for an exam */}
-        <Route
-          path="Questionares/:examcode"
-          element={<ExamSelectionBasePage />}
-        />
-
-        {/* Exam page per section */}
-        <Route
-          path="Questionares/:examcode/:section_module"
-          element={
-            <ProtectedRoute>
-              <ExamBasePage />
-            </ProtectedRoute>
-          }
-        />
-
-        {/* Summary page */}
-        <Route
-          path="Questionares/:examcode/:section_module/Summary"
-          element={
-            <ProtectedRoute>
-              <ExamSummaryPage />
-            </ProtectedRoute>
-          }
-        />
-
-        {/* Auth */}
-        <Route path="Login" element={<Login />} />
-        <Route path="Signup" element={<SignUp />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+            {/* Auth */}
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
+          </Routes>
+          <Footer />
+        </>
+      ) : (
+        <>
+          <Routes>
+            <Route element={<ProtectedRoute />}>
+              <Route element={<AuthenticatedOutlet />}>
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/statements" element={<Statements />} />
+                <Route path="/settings" element={<Settings />} />
+                <Route path="/profile" element={<Profile />} />
+              </Route>
+            </Route>
+          </Routes>
+        </>
+      )}
+    </>
   );
 }
 
