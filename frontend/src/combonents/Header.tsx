@@ -53,9 +53,9 @@ function Header() {
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? (
-                <IoCloseOutline size={28} />
+                <IoCloseOutline size={28} color="black"/>
               ) : (
-                <CiMenuBurger size={28} />
+                <CiMenuBurger size={28} color="black"/>
               )}
             </div>
           )}
