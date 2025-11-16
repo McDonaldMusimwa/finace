@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router";
+import { Route, Routes, Navigate } from "react-router";
 import Header from "./combonents/Header.tsx";
 import Footer from "./combonents/Footer.tsx";
 import React from "react";
@@ -47,6 +47,7 @@ function App(): React.JSX.Element {
           <Routes>
             <Route element={<ProtectedRoute />}>
               <Route element={<AuthenticatedOutlet />}>
+                <Route index element={<Navigate to="/dashboard" replace />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/statements" element={<Statements />} />
                 <Route path="/settings" element={<Settings />} />

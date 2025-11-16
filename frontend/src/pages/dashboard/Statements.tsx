@@ -20,9 +20,38 @@ export default function Statements(): JSX.Element {
         setSelectedUrl(URL.createObjectURL(newFiles[0]));
     }
 
-    function handleUpload(e: React.FormEvent) {
+    async function handleUpload(e: React.FormEvent) {
         e.preventDefault();
-        handleFiles(fileInputRef.current?.files ?? null);
+        
+        const fileToUpload = fileInputRef.current?.files?.[0];
+        if (!fileToUpload) {
+            alert('Please select a file first');
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append('statement', fileToUpload);
+
+        try {
+            const response = await fetch('http://localhost:8000/api/statements', {
+                method: 'POST',
+                body: formData
+            });
+            
+            const result = await response.json();
+            
+            if (result.success) {
+                console.log('Statement processed:', result.data);
+                alert(`Statement processed successfully!\nBank: ${result.data.bankname}\nTransactions: ${result.data.transactions.length}`);
+                handleFiles(fileInputRef.current?.files ?? null);
+            } else {
+                alert(`Error: ${result.error}`);
+            }
+        } catch (error) {
+            console.error('Upload error:', error);
+            alert('Failed to upload statement. Make sure the backend is running.');
+        }
+        
         if (fileInputRef.current) fileInputRef.current.value = "";
     }
 
@@ -53,7 +82,7 @@ export default function Statements(): JSX.Element {
                 </label>
                 <div className={styles.formActions}>
                     <button type="submit" className={styles.uploadBtn}>
-                        Add Files
+                        Add Statement
                     </button>
                 </div>
             </form>
